@@ -282,4 +282,15 @@ $(document).ready(function() {
     equal(testAfter(0, 0), 1, "after(0) should fire immediately");
   });
 
+  test("complement", function(){
+
+    var notArray = _.complement(_.isArray);
+    var opposite = _.complement(function(bool){return bool;});
+
+    equal(notArray([1,2]), false, 'notArray([1,2]) should return false');
+    equal(notArray(1), true, 'notArray(1) should return true');
+
+    equal(opposite(true), false, "the expected value is the opposite of what is passed in");
+  })
+
 });

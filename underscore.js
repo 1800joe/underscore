@@ -732,6 +732,12 @@
     };
   };
 
+  _.complement = function(func){
+    return function(){
+      return ! func.apply(this, arguments);
+    };
+  };
+
   // Object Functions
   // ----------------
 
